@@ -11,7 +11,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-bg-main px-[100px] py-[25px] flex justify-between items-center">
+    <header className="bg-bg-main px-[100px] py-[25px] flex justify-between items-center fixed top-0 left-0 right-0 z-50">
       <Link href="/">
         <h6 className="text-btns uppercase text-typo-secondary">
           [ Tymoteusz Piątek ]

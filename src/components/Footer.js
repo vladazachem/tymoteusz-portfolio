@@ -10,7 +10,7 @@ export default function Footer() {
   const showHomeButton = pathname !== "/";
 
   return (
-    <footer className="bg-bg-main px-[100px] py-[25px]  flex justify-between items-center">
+    <footer className="bg-bg-main px-[100px] py-[25px] flex justify-between items-center fixed bottom-0 left-0 right-0 z-50">
       {showHomeButton ? (
         <Link href="/" className="flex items-center gap-2">
           <svg
