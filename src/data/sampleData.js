@@ -17,7 +17,16 @@ export const sampleData = {
     ],
     about: {
       content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      contact: "contact@example.com",
+      contact: [
+        {
+            title: "Instagram",
+            url: "https://www.instagram.com/",
+        },
+        {
+            title: "Email",
+            url: "contact@example.com",
+        },
+      ],
     },
   };
   
