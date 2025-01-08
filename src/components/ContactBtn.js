@@ -5,7 +5,7 @@ export default function ContactBtn({ title, url }) {
     <div>
       <Link
         href={url}
-        className="text-typo-main hover:text-btns-hover flex items-center gap-2"
+        className="flex items-center gap-2"
       >
         <p
             className="text-typo-secondary hover:text-btns-hover font-code text-btns uppercase"
