@@ -1,10 +1,11 @@
-import { sampleData } from "../data/sampleData";
-
 export default function Home() {
   return (
-    <div className="">
-      <h1 className="text-h1 font-sans">Teksty</h1>
-      <p className="text-p mt-4">{sampleData.about.content}</p>
+    <div className="flex flex-col gap-24 text-h1 font-sans">
+      <div className="text-typo-main">
+        <h1>Tymoteusz</h1>
+        <h1>Piątek/</h1>
+      </div>
+      <h1 className="text-typo-secondary">Teksty</h1>
     </div>
   );
 }
