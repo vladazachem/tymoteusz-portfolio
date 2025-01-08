@@ -1,20 +1,100 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
-    <header className="bg-bg-main p-6 flex justify-between items-center">
-      <div className="text-h4 font-sans">[ Tymoteusz Piątek ]</div>
-      <nav className="space-x-6">
-        <Link href="/" className="text-typo-main hover:text-btns-hover">
-          Home
-        </Link>
-        <Link href="/projects" className="text-typo-main hover:text-btns-hover">
-          Projects
-        </Link>
-        <Link href="/about" className="text-typo-main hover:text-btns-hover">
-          About
+    <header className="bg-bg-main px-[100px] py-[25px] flex justify-between items-center">
+      <Link href="/">
+        <h6 className="text-btns uppercase text-typo-secondary">
+          [ Tymoteusz Piątek ]
+        </h6>
+      </Link>
+      <nav className="flex gap-10">
+        <button
+          onClick={toggleMenu}
+          className="flex items-center gap-2"
+        >
+          <p className="text-typo-main hover:text-btns-hover focus:outline-none font-code text-btns font-normal uppercase">Teksty</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="10"
+            height="10"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className={`inline-block transform transition-transform duration-200 ${
+                menuOpen ? "rotate-180" : "rotate-0"
+            }`}
+          >
+            <path d="M13 17.586V4h-2v13.586l-6.293-6.293-1.414 1.414L12 21.414l8.707-8.707-1.414-1.414L13 17.586z" />
+          </svg>
+        </button>
+        <Link
+          href="/about"
+          className="text-typo-main hover:text-btns-hover font-code text-btns uppercase"
+        >
+          O mnie
         </Link>
       </nav>
+
+      {menuOpen && (
+        <div className="absolute top-11 right-[88px] bg-bg-main p-3 w-[162px] z-10">
+          <ul className="divide-y divide-bg-img text-btns font-code uppercase">
+            <li className="py-2">
+              <Link
+                href="/texts"
+                className="block text-typo-secondary hover:text-btns-hover"
+                onClick={() => setMenuOpen(false)}
+              >
+                Wszystko
+              </Link>
+            </li>
+            <li className="py-2">
+              <Link
+                href="/texts/opowiadania"
+                className="block text-typo-secondary hover:text-btns-hover"
+                onClick={() => setMenuOpen(false)}
+              >
+                Opowiadania
+              </Link>
+            </li>
+            <li className="py-2">
+              <Link
+                href="/texts/eseje"
+                className="block text-typo-secondary hover:text-btns-hover"
+                onClick={() => setMenuOpen(false)}
+              >
+                Eseje
+              </Link>
+            </li>
+            <li className="py-2">
+              <Link
+                href="/texts/szkice"
+                className="block text-typo-secondary hover:text-btns-hover"
+                onClick={() => setMenuOpen(false)}
+              >
+                Szkice
+              </Link>
+            </li>
+            <li className="py-2">
+              <Link
+                href="/texts/filmy"
+                className="block text-typo-secondary hover:text-btns-hover"
+                onClick={() => setMenuOpen(false)}
+              >
+                Filmy
+              </Link>
+            </li>
+          </ul>
+        </div>
+      )}
     </header>
   );
 }
