@@ -6,10 +6,6 @@ import Link from "next/link";
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
   return (
     <header className="bg-bg-main px-[100px] py-[25px] flex justify-between items-center fixed top-0 left-0 right-0 z-50">
       <Link href="/">
@@ -19,10 +15,12 @@ export default function Header() {
       </Link>
       <nav className="flex gap-10">
         <button
-          onClick={toggleMenu}
+          onMouseEnter={() => setMenuOpen(true)}
           className="flex items-center gap-2"
         >
-          <p className="text-typo-main hover:text-btns-hover focus:outline-none font-code text-btns font-normal uppercase">Teksty</p>
+          <p className="text-typo-main hover:text-btns-hover focus:outline-none font-code text-btns font-normal uppercase">
+            Teksty
+          </p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="10"
@@ -30,7 +28,7 @@ export default function Header() {
             viewBox="0 0 24 24"
             fill="currentColor"
             className={`inline-block transform transition-transform duration-200 ${
-                menuOpen ? "rotate-180" : "rotate-0"
+              menuOpen ? "rotate-180" : "rotate-0"
             }`}
           >
             <path d="M13 17.586V4h-2v13.586l-6.293-6.293-1.414 1.414L12 21.414l8.707-8.707-1.414-1.414L13 17.586z" />
@@ -45,7 +43,12 @@ export default function Header() {
       </nav>
 
       {menuOpen && (
-        <div className="absolute top-11 right-[88px] bg-bg-main p-3 w-[162px] z-10">
+        <div
+        onMouseLeave={() => {
+          setTimeout(() => setMenuOpen(false), 200);
+        }}
+          className="absolute top-11 right-[88px] bg-bg-main p-3 w-[162px] z-10"
+        >
           <ul className="divide-y divide-bg-img text-btns font-code uppercase">
             <li className="py-2">
               <Link
