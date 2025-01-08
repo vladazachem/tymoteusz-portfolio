@@ -10,16 +10,16 @@ module.exports = {
       },
       colors: {
         bg: {
-          main: "#FFFFFF",
-          lines: "#EAEAEA",
-          img: "#333333",
+          main: "#FAFAFA",
+          lines: "#F1EEEB",
+          img: "#0A133D",
         },
         typo: {
           main: "#000000",
-          secondary: "#808080",
+          secondary: "#7D7D7D",
         },
         btns: {
-          hover: "#000080",
+          hover: "#0A133D",
         },
       },
       fontSize: {
