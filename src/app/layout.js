@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="bg-bg-main min-h-screen flex flex-col justify-between text-typo-main">
         <Header />
-        <main className="flex-grow flex items-center px-[100px] py-[70px]">{children}</main>
+        <main className="w-screen flex-grow flex items-center px-[100px] py-[70px]">{children}</main>
         <Footer />
       </body>
     </html>
