@@ -17,7 +17,7 @@ export default function TextDetailsPage() {
   if (!text) {
     return (
       <div className="w-full flex flex-col items-center justify-center">
-        <h1 className="text-h1 font-sans">404</h1>
+        <h1 className="text-h2 sm:text-h1 font-sans">404</h1>
         <p className="text-p">Tekst, którego szukasz, nie istnieje.</p>
       </div>
     );
@@ -27,7 +27,7 @@ export default function TextDetailsPage() {
     <div className="w-full flex flex-col pt-12 overflow-auto">
       <div className="flex flex-col items-center gap-12">
         <div className="flex flex-col w-fit">
-          <h1 className="text-h2 font-sans font-medium">{text.title}</h1>
+          <h1 className="text-h3 sm:text-h2 font-sans font-medium">{text.title}</h1>
           <div className="flex items-center justify-between text-typo-secondary text-h6">
             <span>{text.year}</span>
             <span>{text.category}</span>
