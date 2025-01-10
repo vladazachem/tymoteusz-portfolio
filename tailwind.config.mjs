@@ -23,7 +23,7 @@ module.exports = {
         },
       },
       fontSize: {
-        h1: ["119px", "auto"],
+        h1: ["117px", "auto"],
         h2: ["100px", "auto"],
         h3: ["60px", "auto"],
         h4: ["45px", "auto"],
@@ -36,6 +36,9 @@ module.exports = {
         sm: "402px",
         md: "1280px",
         lg: "1440px",
+      },
+      backgroundImage: {
+        'lines': "repeating-linear-gradient(0deg, transparent, transparent 124px, #E2DDD8 125px)",
       },
     },
   },

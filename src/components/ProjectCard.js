@@ -8,7 +8,7 @@ export default function ProjectCard({ title, category, description }) {
         title.toLowerCase()
       )}`}
     >
-      <div className="p-10 flex flex-col gap-4 border-solid border-[2px] border-gray-300 hover:border-gray-950 group transition-colors duration-300">
+      <div className="p-10 flex flex-col gap-4 bg-bg-main border-solid border-[2px] border-gray-300 hover:border-gray-950 group transition-colors duration-300">
         <div className="relative w-full h-0 pb-[40%]">
           <Image
             src="/the-great-wave-off-kanagawa.jpg"
