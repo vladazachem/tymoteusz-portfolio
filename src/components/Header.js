@@ -1,10 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null); // Ref for the menu
+
+  // Close the menu if clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <header className="bg-bg-main px-[100px] py-[25px] flex justify-center sm:justify-between items-center fixed top-0 left-0 right-0 z-50">
@@ -15,7 +30,7 @@ export default function Header() {
       </Link>
       <nav className="flex gap-10">
         <button
-          onMouseEnter={() => setMenuOpen(true)}
+          onClick={() => setMenuOpen(!menuOpen)} // Toggle menu on click
           className="flex items-center gap-2"
         >
           <p className="text-typo-main hover:text-btns-hover focus:outline-none font-code text-btns font-normal uppercase">
@@ -44,9 +59,7 @@ export default function Header() {
 
       {menuOpen && (
         <div
-        onMouseLeave={() => {
-          setTimeout(() => setMenuOpen(false), 200);
-        }}
+          ref={menuRef} // Attach the ref to the menu
           className="absolute top-11 sm:right-[88px] bg-bg-main p-3 w-full text-center sm:w-[162px] sm:text-start z-10"
         >
           <ul className="divide-y divide-bg-img text-btns font-code uppercase">
