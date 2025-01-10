@@ -16,7 +16,7 @@ export default function TextDetailsPage() {
 
   if (!text) {
     return (
-      <div className="w-full flex flex-col items-center justify-center h-screen">
+      <div className="w-full flex flex-col items-center justify-center">
         <h1 className="text-h1 font-sans">404</h1>
         <p className="text-p">Tekst, którego szukasz, nie istnieje.</p>
       </div>
