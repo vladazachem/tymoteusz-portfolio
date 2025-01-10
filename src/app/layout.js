@@ -9,9 +9,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-bg-main min-h-screen flex flex-col justify-between text-typo-main">
+      <body className="bg-bg-main min-h-screen flex flex-col justify-between text-typo-main overflow-hidden">
         <Header />
-        <main className="w-screen flex-grow flex px-[100px] py-[70px]">{children}</main>
+        <main className="w-screen flex-grow flex px-[100px] py-[70px] overflow-hidden">{children}</main>
         <Footer />
       </body>
     </html>

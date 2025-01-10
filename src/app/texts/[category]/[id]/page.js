@@ -16,7 +16,7 @@ export default function TextDetailsPage() {
 
   if (!text) {
     return (
-      <div className="w-full flex flex-col items-center justify-center">
+      <div className="w-full flex flex-col items-center justify-center h-screen">
         <h1 className="text-h1 font-sans">404</h1>
         <p className="text-p">Tekst, którego szukasz, nie istnieje.</p>
       </div>
@@ -24,15 +24,21 @@ export default function TextDetailsPage() {
   }
 
   return (
-    <div className="mx-auto flex flex-col gap-12 pt-12">
-      <div className="flex flex-col gap-6">
-        <h1 className="text-h2 font-sans font-medium">{text.title}</h1>
-        <div className="flex items-center justify-between text-typo-secondary text-h6 mb-6">
-          <span>{text.year}</span>
-          <span>{text.category}</span>
+    <div className="w-full flex flex-col pt-12 overflow-auto">
+      <div className="flex flex-col items-center gap-12">
+        <div className="flex flex-col w-fit">
+          <h1 className="text-h2 font-sans font-medium">{text.title}</h1>
+          <div className="flex items-center justify-between text-typo-secondary text-h6">
+            <span>{text.year}</span>
+            <span>{text.category}</span>
+          </div>
+        </div>
+        <div className="lg:w-8/12 md:w-9/12">
+          {text.content.map((paragraph, index) => (
+            <p key={index} className="text-p py-2 leading-7">{paragraph}</p>
+          ))}
         </div>
       </div>
-      <p className="text-p leading-7 text-justify">{text.content}</p>
     </div>
   );
 }
