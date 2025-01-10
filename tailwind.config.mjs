@@ -32,11 +32,6 @@ module.exports = {
         p: ["15px", "auto"],
         btns: ["12px", "auto"],
       },
-      screens: {
-        sm: "402px",
-        md: "1280px",
-        lg: "1440px",
-      },
       backgroundImage: {
         'lines': "repeating-linear-gradient(0deg, transparent, transparent 124px, #E2DDD8 125px)",
       },
