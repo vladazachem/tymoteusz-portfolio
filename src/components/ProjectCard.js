@@ -19,7 +19,7 @@ export default function ProjectCard({ title, category, description }) {
           <div className="absolute inset-0 bg-black/40 opacity-100 group-hover:opacity-0 transition-opacity duration-300"></div>
         </div>
         <div className="flex flex-col">
-          <h2 className="text-h3 font-sans font-medium">{title}</h2>
+          <h2 className="text-h5 sm:text-h3 font-sans font-medium">{title}</h2>
           <p className="text-typo-secondary text-h6 font-code font-medium">
             {category}
           </p>
