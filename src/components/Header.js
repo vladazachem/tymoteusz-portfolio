@@ -7,8 +7,8 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-bg-main px-[100px] py-[25px] flex justify-between items-center fixed top-0 left-0 right-0 z-50">
-      <Link href="/">
+    <header className="bg-bg-main px-[100px] py-[25px] flex justify-center sm:justify-between items-center fixed top-0 left-0 right-0 z-50">
+      <Link href="/" className="hidden sm:inline-block">
         <h6 className="text-btns uppercase text-typo-secondary">
           [ Tymoteusz Piątek ]
         </h6>
@@ -47,7 +47,7 @@ export default function Header() {
         onMouseLeave={() => {
           setTimeout(() => setMenuOpen(false), 200);
         }}
-          className="absolute top-11 right-[88px] bg-bg-main p-3 w-[162px] z-10"
+          className="absolute top-11 sm:right-[88px] bg-bg-main p-3 w-full text-center sm:w-[162px] sm:text-start z-10"
         >
           <ul className="divide-y divide-bg-img text-btns font-code uppercase">
             <li className="py-2">

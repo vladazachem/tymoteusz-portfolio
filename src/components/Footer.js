@@ -28,7 +28,7 @@ export default function Footer() {
           </p>
         </Link>
       ) : (
-        <div className="w-[160px]">
+        <div className="sm:w-[160px]">
           {/* Keeps space for the button when hidden */}
         </div>
       )}
