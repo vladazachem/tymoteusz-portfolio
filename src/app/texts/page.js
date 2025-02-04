@@ -3,7 +3,7 @@ import ProjectCard from "../../components/ProjectCard";
 
 export default function AllTextsPage() {
   return (
-    <div className="flex flex-col w-full gap-10">
+    <div className="flex flex-col w-full pt-16 gap-10">
       <h1 className="text-h4 sm:text-h3 text-center font-sans font-medium">Teksty</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {sampleData.texts.map((text) => (

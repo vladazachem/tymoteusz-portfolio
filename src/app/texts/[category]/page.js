@@ -13,7 +13,7 @@ export default function CategoryPage() {
   );
 
   return (
-    <div className="flex flex-col w-full gap-10">
+    <div className="flex flex-col w-full pt-16 gap-10">
       <h1 className="text-h4 sm:text-h3 text-center font-sans font-medium capitalize">{category}</h1>
       {filteredTexts.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
